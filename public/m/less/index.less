@@ -1,0 +1,42 @@
+@golbalColor: #006699;
+
+body {
+  background-color: #fff;
+}
+
+// 1.顶部区域
+#header {
+  background-color: @golbalColor;
+  height: 45px;
+
+  > h4 {
+    color: #fff;
+    line-height: 45px;
+    margin: 0;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .fa-search {
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 16px;
+  }
+}
+
+// 2.轮播图部分
+#slider {
+    //解决触摸事件都产生默认行为，但是 touch 事件照样可以触发
+    touch-action: none;
+  .mui-slider {
+    .mui-slider-indicator {
+      position: absolute;
+      bottom: 18px;
+      width: 100%;
+      text-align: center;
+      background: 0 0;
+    }
+  }
+}
