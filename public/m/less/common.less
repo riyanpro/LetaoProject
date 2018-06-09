@@ -1,0 +1,147 @@
+// 全局公共样式
+
+@golbalColor: #006699;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+}
+ul {
+  list-style: none;
+}
+img {
+  display: block;
+}
+
+.clearfix::after {
+  content: "";
+  display: block;
+  visibility: hidden;
+  overflow: hidden;
+  clear: both;
+  height: 0;
+}
+.clear {
+  *zoom: 1;
+}
+
+// 1.顶部区域
+#header {
+  background-color: @golbalColor;
+  height: 45px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  > h4 {
+    color: #fff;
+    line-height: 45px;
+    margin: 0;
+    text-align: center;
+    font-weight: normal;
+  }
+  .fa-arrow-left {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #fff;
+  }
+  form {
+    padding: 5px 45px;
+    input {
+      background-color: #fff;
+      text-align: left;
+      font-size: 14px;
+    }
+  }
+
+  .fa-search {
+    color: #fff;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 16px;
+  }
+}
+
+// 中间主体部分
+#main{
+  // width: 100%;
+  // position: absolute;
+  padding-top: 45px;
+  padding-bottom: 50px;
+}
+
+//9.底部导航
+#footer {
+  height: 50px;
+  background-color: @golbalColor;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+
+  .mui-row {
+    > div {
+      a {
+        display: block;
+        color: #fff;
+        text-align: center;
+        font-size: 16px;
+        padding-top: 10px;
+
+        > span {
+          display: block;
+          font-size: 12px;
+          margin-top: 3px;
+        }
+
+        &.active {
+          color: orange;
+        }
+      }
+    }
+  }
+}
+
+//产品部分的样式
+.products {
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 0 5px #ccc;
+  padding-bottom: 10px;
+
+  img {
+    width: 100%;
+  }
+
+  .price {
+    font-size: 14px;
+    .new-price {
+      color: red;
+    }
+    .old-price {
+      font-size: 12px;
+      margin-left: 2px;
+    }
+  }
+
+  .mui-btn-primary {
+    background-color: @golbalColor;
+    color: #fff;
+  }
+}
+
+
+//解决区域滚动事件都产生默认行为，但是 touch 事件照样可以触发
+.mui-scroll-wrapper {
+  touch-action: none;
+}

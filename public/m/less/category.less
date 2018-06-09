@@ -1,0 +1,51 @@
+//引入公共样式部分
+@import 'common.less';
+
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    background-color: #ccc;
+}
+//主体部分样式
+#main {
+    display: flex;
+
+    .category-left {
+        width: 80px;
+
+        .cotegory-list {
+            li {
+                height: 45px;
+                line-height: 45px;
+                text-align: center;
+                border-bottom: 1px solid #ccc;
+                border-right: 1px solid #ccc;
+                background-color: #fff;
+                font-size: 14px;
+                a {
+                    color: #333;
+                }
+                &.active {
+                    background-color: #ccc;
+                }
+            }
+        }
+    }
+    .category-right {
+        flex: 1;
+        padding: 10px;
+        .mui-row {
+            >div {
+                background-color: #fff;
+                text-align: center;
+                a {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
