@@ -61,7 +61,9 @@ img {
     }
   }
 
-  .fa-search {
+  .fa-search,
+  .fa-home,
+  .fa-refresh {
     color: #fff;
     position: absolute;
     top: 15px;
@@ -144,4 +146,32 @@ img {
 //解决区域滚动事件都产生默认行为，但是 touch 事件照样可以触发
 .mui-scroll-wrapper {
   touch-action: none;
+}
+
+
+// 搜索页面的搜索框公共样式
+.search-bar {
+  >form {
+      padding: 10px;
+      position: relative;
+
+      .search-input {
+          height: 30px;
+          padding-right: 70px;
+          margin-bottom: 0;
+          border: 3px 0 0 3px;
+          font-size: 12px;
+          border-color: @golbalColor;
+      }
+      .search-btn {
+          width: 60px;
+          height: 30px;
+          position: absolute;
+          right: 10px;
+          top: 10px;
+          background-color: @golbalColor;
+          color: #fff;
+          border: 0 3px 3px 0;
+      }
+  }
 }

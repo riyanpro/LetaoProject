@@ -6,7 +6,7 @@
     <!-- 视口：移动端自适应 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>我的分类页面</title>
+    <title>我的搜索页面</title>
 
     <!-- 引入文件 -->
     <!-- 1.引入MUI的css文件 -->
@@ -14,7 +14,7 @@
     <!-- 2.引入字体图标的CSS文件 -->
     <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
     <!-- 3.引入less -->
-    <link rel="stylesheet/less" href="./less/category.less">
+    <link rel="stylesheet/less" href="./less/search.less">
     <!-- 4.引入less 的js文件 -->
     <script src="./lib/less/less.js"></script>
 
@@ -24,28 +24,29 @@
 
     <!-- 1.顶部区域 -->
     <header id="header">
-        <a href="./index.html" class="fa fa-arrow-left"></a>
-        <form action="">
-            <input type="search" placeholder="请输入商品名称">
-        </form>
-        <a href="./search.html" class="fa fa-search" aria-hidden="true"></a>
+        <a href="./category.html" class="fa fa-arrow-left"></a>
+        <h4>搜索中心</h4>
     </header>
 
     <!-- 中间主体部分 区域滚动 -->
     <main id="main">
-        <!-- 左侧导航 -->
-        <div class="category-left">
-            <ul class="cotegory-list">
-                <!-- 模版引擎动态获取 -->
-            </ul>
+        <div class="search-bar">
+            <form>
+                <input type="text" class="search-input" placeholder="搜索你喜欢的商品">
+                <a href="#" class="search-btn mui-btn mui-btn-primary">搜索</a>
+            </form>
         </div>
-        <!-- 右侧商标列表部分 -->
-        <div class="category-right">
-            <div class="mui-row">
-                <!-- 模版引擎动态获取 -->
+        <div class="search-history">
+            <div class="title mui-clearfix">
+                <span class="mui-pull-left">搜索记录</span>
+                <a href="#" class="clear mui-pull-right fa fa-trash">
+                    清空记录
+                </a>
+            </div>
+            <div class="content">
+                <!-- 模版引擎渲染内容 -->
             </div>
         </div>
-
     </main>
 
     <!-- 9.底部导航 -->
@@ -75,7 +76,19 @@
     </footer>
 
 
-
+    <!-- 搜索历史记录的模版引擎 -->
+    <script type="text/html" id="searchHistoryTem">
+        {{if rows.length != 0 }}
+            <ul class="search-list">
+                {{each rows as value i}}
+                    <li>
+                        <a href="./productlist.html?search={{value.search}}" class="search-record" data-id="{{value.id}}">{{value.search}}</a>
+                        <span class="delete fa fa-times mui-pull-right"></span>
+                    </li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </script>
 
     <!-- 5.引入MUI的JS文件 -->
     <script src="./lib/mui/js/mui.js"></script>
@@ -84,29 +97,8 @@
     <!-- 7.引入模版引擎 -->
     <script src="./lib/artTemplate/template.js"></script>
     <!-- 8.引入自己的js文件 -->
-    <script src="./js/category.js"></script>
+    <script src="./js/search.js"></script>
 
-
-    <!-- 左侧导航部分模板引擎 -->
-    <script type="text/html" id="categoryListTem">
-        {{each rows as value i}}
-            <li class="{{i == 0 ? 'active' : ''}}">
-                <a href="#" data-id="{{value.id}}">{{value.categoryName}}</a>
-            </li>
-        {{/each}}
-    </script>
-
-    <!-- 右侧商标列表部分模板引擎 -->
-    <script type="text/html" id="categoryNavTem">
-        {{each rows as value i}}
-            <div class="mui-col-xs-4">
-                <a href="#">
-                    <img src="{{value.brandLogo}}" alt="">
-                    <p>{{value.brandName}}</p>
-                </a>
-            </div>
-        {{/each}}
-    </script>
 </body>
 
 </html>

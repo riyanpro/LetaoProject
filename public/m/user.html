@@ -6,7 +6,7 @@
     <!-- 视口：移动端自适应 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>我的分类页面</title>
+    <title>我的搜索页面</title>
 
     <!-- 引入文件 -->
     <!-- 1.引入MUI的css文件 -->
@@ -14,7 +14,7 @@
     <!-- 2.引入字体图标的CSS文件 -->
     <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
     <!-- 3.引入less -->
-    <link rel="stylesheet/less" href="./less/category.less">
+    <link rel="stylesheet/less" href="./less/user.less">
     <!-- 4.引入less 的js文件 -->
     <script src="./lib/less/less.js"></script>
 
@@ -24,28 +24,36 @@
 
     <!-- 1.顶部区域 -->
     <header id="header">
-        <a href="./index.html" class="fa fa-arrow-left"></a>
-        <form action="">
-            <input type="search" placeholder="请输入商品名称">
-        </form>
-        <a href="./search.html" class="fa fa-search" aria-hidden="true"></a>
+        <a href="./category.html" class="fa fa-arrow-left"></a>
+        <h4>个人中心</h4>
     </header>
 
     <!-- 中间主体部分 区域滚动 -->
     <main id="main">
-        <!-- 左侧导航 -->
-        <div class="category-left">
-            <ul class="cotegory-list">
-                <!-- 模版引擎动态获取 -->
-            </ul>
-        </div>
-        <!-- 右侧商标列表部分 -->
-        <div class="category-right">
-            <div class="mui-row">
-                <!-- 模版引擎动态获取 -->
-            </div>
-        </div>
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell mui-media">
+                <a href="javascript:;" class="mui-navigate-right">
+                    <img class="mui-media-object mui-pull-left" src="./images/user.jpg">
+                    <div class="mui-media-body">
+                        用户名
+                        <p class='mui-ellipsis'>手机号</p>
+                    </div>
+                </a>
+            </li>
 
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">账户与安全</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">我的购物车</a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">收货地址管理</a>
+            </li>
+        </ul>
+        <div class="loginout">
+            <button type="button" class="btn-loginout mui-btn mui-btn-outlined">退出登录</button>
+        </div>
     </main>
 
     <!-- 9.底部导航 -->
@@ -57,7 +65,7 @@
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="./category.html" class="fa fa-bars active">
+                <a href="./category.html" class="fa fa-bars">
                     <span>分类</span>
                 </a>
             </div>
@@ -67,15 +75,20 @@
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="./user.html" class="fa fa-user">
+                <a href="#" class="fa fa-user active">
                     <span>会员中心</span>
                 </a>
             </div>
         </div>
     </footer>
 
-
-
+    <script type="text/html" id="userinfoTmp">
+        <img class="mui-media-object mui-pull-left" src="./images/user.jpg">
+        <div class="mui-media-body">
+            用户名
+            <p class='mui-ellipsis'>手机号</p>
+        </div>
+    </script>
 
     <!-- 5.引入MUI的JS文件 -->
     <script src="./lib/mui/js/mui.js"></script>
@@ -84,29 +97,8 @@
     <!-- 7.引入模版引擎 -->
     <script src="./lib/artTemplate/template.js"></script>
     <!-- 8.引入自己的js文件 -->
-    <script src="./js/category.js"></script>
+    <script src="./js/user.js"></script>
 
-
-    <!-- 左侧导航部分模板引擎 -->
-    <script type="text/html" id="categoryListTem">
-        {{each rows as value i}}
-            <li class="{{i == 0 ? 'active' : ''}}">
-                <a href="#" data-id="{{value.id}}">{{value.categoryName}}</a>
-            </li>
-        {{/each}}
-    </script>
-
-    <!-- 右侧商标列表部分模板引擎 -->
-    <script type="text/html" id="categoryNavTem">
-        {{each rows as value i}}
-            <div class="mui-col-xs-4">
-                <a href="#">
-                    <img src="{{value.brandLogo}}" alt="">
-                    <p>{{value.brandName}}</p>
-                </a>
-            </div>
-        {{/each}}
-    </script>
 </body>
 
 </html>

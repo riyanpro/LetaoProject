@@ -1,11 +1,11 @@
 $(function () {
     //实例化Letao对象
-    var leTao = new Letao();
+    var letao = new Letao();
 
     //调用轮播图的方法
-    leTao.initSlider();
+    letao.initSlider();
     //调用区域滚动的方法
-    leTao.initScroll();
+    letao.initScroll();
 
 
 })

@@ -1,0 +1,115 @@
+@import "common.less";
+
+#main {
+  padding-bottom: 80px;
+
+  .mui-table-view:after {
+    background-color: #fff;
+  }
+  .mui-table-view:before {
+    background-color: #fff;
+  }
+
+  .product-list {
+    .mui-table-view-cell:after {
+      background-color: #fff;
+    }
+
+    li {
+      margin-right: 0px;
+      position: relative;
+      padding: 0;
+      margin: 10px;
+      border-bottom: 1px solid #c8c7cc;
+
+      a {
+        margin: 0;
+        .left {
+          width: 60px;
+          margin-right: 10px;
+          img {
+            width: 60px;
+            height: 60px;
+          }
+          input {
+            position: absolute;
+            bottom: 18px;
+            left: 15px;
+          }
+        }
+        .right {
+          margin-left: 70px;
+          padding-right: 20px;
+          .title {
+            color: #333;
+            white-space: normal;
+          }
+          > div {
+            padding-right: 10px;
+            font-size: 12px;
+            color: #ccc;
+            height: 25px;
+            .new-price {
+              color: #f00;
+              font-size: 14px;
+            }
+          }
+          .size {
+            font-size: 12px;
+            color: #ccc;
+          }
+        }
+      }
+    }
+  }
+}
+
+.order {
+  padding-left: 10px;
+  position: fixed;
+  height: 30px;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+  border-top: 1px solid #ccc;
+  z-index: 998;
+  background-color: #fff;
+
+  > p {
+    color: #f00;
+    font-weight: bold;
+    line-height: 30px;
+  }
+  > button {
+    border: none;
+    border-radius: 0;
+    background-color: #f00;
+    color: #fff;
+  }
+}
+
+.edit-size {
+  padding: 8px 5px;
+
+  span {
+    display: inline-block;
+    width: 28px;
+    line-height: 28px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    text-align: center;
+
+    &.active {
+      background-color: orange;
+    }
+  }
+}
+.edit-num {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 12px 5px;
+
+  .mui-numbox {
+    height: 25px;
+  }
+}

@@ -1,11 +1,11 @@
 $(function () {
     //实例化Letao对象
-    var leTao = new Letao();
+    var letao = new Letao();
 
     //调用获取左侧导航数据的方法
-    leTao.getLeftData();
+    letao.getLeftData();
     //获取右侧商标数据
-    leTao.getRightData();
+    letao.getRightData();
 })
 
 

@@ -1,0 +1,53 @@
+@import "common.less";
+
+html, 
+body {
+    height: 100%;
+}
+// 商品列表样式
+#main {
+    height: 100%;
+    .container {
+        position: relative;
+        height: 100%;
+        .mui-scroll-wrapper {
+
+            .mui-scroll {
+
+                .productlist {
+                  .title {
+                    background-color: #efeff4;
+                    line-height: 30px;
+                    text-align: center;
+                    margin-top: 5px;
+                    .mui-row {
+                      a {
+                        font-size: 12px;
+                        color: #666;
+                      }
+                    }
+                  }
+                  .mui-content {
+                      padding: 10px 5px;
+                      background-color: #fff;
+                      .mui-row {
+                          >div {
+                              padding: 5px;
+                              
+                              .describe {
+                                //   超过两行的文字省略隐藏
+                                overflow:hidden; 
+                                text-overflow:ellipsis;
+                                display:-webkit-box; 
+                                -webkit-box-orient:vertical;
+                                -webkit-line-clamp:2; 
+                              }
+                          }
+                      }
+                  }
+                }
+
+            }
+        }
+    }
+}
